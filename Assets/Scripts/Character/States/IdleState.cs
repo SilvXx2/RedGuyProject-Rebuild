@@ -28,6 +28,13 @@ public class IdleState : ICharacter
         horizontalInput = Input.GetAxisRaw("Horizontal");
 
         bool hasInput = horizontalInput != 0f;
+        bool jumpPressed = Input.GetButtonDown("Jump");
+
+        if (jumpPressed)
+        {
+            player.machine.ChangeState(player.machine.JumpState);
+            return;
+        }
 
         if (hasInput)
         {

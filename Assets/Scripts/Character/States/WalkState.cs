@@ -29,6 +29,13 @@ public class WalkState : ICharacter
 
         bool hasInput = horizontalInput != 0f;
         bool shiftHeld = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
+        bool jumpPressed = Input.GetButtonDown("Jump");
+
+        if (jumpPressed)
+        {
+            player.machine.ChangeState(player.machine.JumpState);
+            return;
+        }
 
         
         player.transform.Translate(new Vector3(horizontalInput, 0f, 0f) * (Time.deltaTime * speed), Space.World);

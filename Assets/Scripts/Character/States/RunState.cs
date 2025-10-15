@@ -4,7 +4,7 @@ public class RunState : ICharacter
 {
     PlayerMovement player;
     float horizontalInput;
-    [SerializeField] private float speed = 7f;
+    [SerializeField] private float speed = 10f;
 
     public RunState(PlayerMovement player)
     {

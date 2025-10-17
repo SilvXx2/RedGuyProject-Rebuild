@@ -26,6 +26,7 @@ public class IdleState : ICharacter
     {
         // Movimiento 2D: solo eje X
         horizontalInput = Input.GetAxisRaw("Horizontal");
+        player.CurrentHorizontalSpeed = 0f;
 
         bool hasInput = horizontalInput != 0f;
         bool jumpPressed = Input.GetButtonDown("Jump");

@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float groundCheckRadius = 0.1f;
     [SerializeField] private LayerMask groundLayer;
 
+    public float CurrentHorizontalSpeed { get; set; }
+
     private void Awake()
     {
         Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -32,5 +34,15 @@ public class PlayerMovement : MonoBehaviour
         }
 
         return Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+    }
+
+    public bool JumpPressed
+    {
+        get
+        {
+            bool newInput = Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame;
+            bool oldInput = Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Jump");
+            return newInput || oldInput;
+        }
     }
 }

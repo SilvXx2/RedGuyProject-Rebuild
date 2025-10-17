@@ -39,9 +39,11 @@ public class WalkState : ICharacter
 
         
         player.transform.Translate(new Vector3(horizontalInput, 0f, 0f) * (Time.deltaTime * speed), Space.World);
+        player.CurrentHorizontalSpeed = horizontalInput * speed;
 
         if (!hasInput)
         {
+            player.CurrentHorizontalSpeed = 0f;
             player.machine.ChangeState(player.machine.IdleState);
             return;
         }

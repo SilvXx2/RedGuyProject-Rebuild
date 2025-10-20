@@ -10,14 +10,20 @@ public class CharacterStateMachine : MonoBehaviour
     private WalkState _walkState;
     private RunState _runState;
     private JumpState _jumpState;
+    private ShootState _shootState;
 
     // Propiedades con nombres consistentes (PascalCase)
     public IdleState IdleState => _idleState;
     public WalkState WalkState => _walkState;
     public RunState RunState => _runState;
     public JumpState JumpState => _jumpState;
+    public ShootState ShootState => _shootState;
 
     [SerializeField] private PlayerMovement player;
+
+    // Nuevo: referencias para disparo sin Shooter
+    [SerializeField] private BulletFactory bulletFactory;
+    [SerializeField] private Transform firePoint;
 
     private void Awake()
     {
@@ -46,6 +52,18 @@ public class CharacterStateMachine : MonoBehaviour
         _walkState = new WalkState(player);
         _runState = new RunState(player);
         _jumpState = new JumpState(player);
+
+        // Resolver referencias para el disparo
+        if (bulletFactory == null)
+            bulletFactory = GetComponent<BulletFactory>() ?? player.GetComponent<BulletFactory>();
+
+        if (firePoint == null)
+            firePoint = player.transform;
+
+        if (bulletFactory == null)
+            Debug.LogWarning("No se encontró BulletFactory. Agrega y configura BulletFactory en el Player.");
+
+        _shootState = new ShootState(this, bulletFactory, firePoint);
     }
 
     public void Initialize()

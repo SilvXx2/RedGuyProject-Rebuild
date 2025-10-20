@@ -41,5 +41,17 @@ public class IdleState : ICharacter
         {
             player.machine.ChangeState(player.machine.WalkState);
         }
+
+        Shoot();
+    }
+
+    public void Shoot() 
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            player.machine.ShootState.SetReturn(this);
+            player.machine.ChangeState(player.machine.ShootState);
+            return;
+        }
     }
 }

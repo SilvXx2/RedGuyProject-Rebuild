@@ -48,7 +48,6 @@ public class ShootState : ICharacter
             _factory.Create(_firePoint.position, _firePoint.right);
             _nextShootTime = Time.time + _cooldown;
         }
-        // Si no está listo, simplemente volvemos sin disparar
 
         _shot = true;
         _machine.ChangeState(_returnState ?? _machine.IdleState);

@@ -24,7 +24,6 @@ public class IdleState : ICharacter
 
     public void Update()
     {
-        // Movimiento 2D: solo eje X
         horizontalInput = Input.GetAxisRaw("Horizontal");
         player.CurrentHorizontalSpeed = 0f;
 

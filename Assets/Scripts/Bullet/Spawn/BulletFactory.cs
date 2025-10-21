@@ -3,7 +3,7 @@ using UnityEngine;
 public class BulletFactory : MonoBehaviour
 {
     [Header("Configuración")]
-    [SerializeField] private BulletInstance prefab;      // Prefab con BulletInstance y su 'data' (ScriptableObject) asignado
+    [SerializeField] private BulletInstance prefab;     
     [SerializeField] private int initialSize = 20;
     [SerializeField] private Transform container;
 
@@ -23,7 +23,7 @@ public class BulletFactory : MonoBehaviour
         Pool = new BulletPool(bulletPrefab, initialSize, container);
     }
 
-    // Usa el pool interno del Factory
+    // POOL INTERNO
     public GameObject Create(Vector3 position)
     {
         return Create(position, Vector3.right);
@@ -42,7 +42,6 @@ public class BulletFactory : MonoBehaviour
         return instance.gameObject;
     }
 
-    // Variante estática similar a tu ejemplo, usando un pool externo
     public static GameObject Create(Vector3 position, Vector3 direction, BulletPool bulletPool)
     {
         var instance = bulletPool.GetFromPool(position);

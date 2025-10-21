@@ -12,7 +12,6 @@ public class CharacterStateMachine : MonoBehaviour
     private JumpState _jumpState;
     private ShootState _shootState;
 
-    // Propiedades con nombres consistentes (PascalCase)
     public IdleState IdleState => _idleState;
     public WalkState WalkState => _walkState;
     public RunState RunState => _runState;
@@ -21,7 +20,6 @@ public class CharacterStateMachine : MonoBehaviour
 
     [SerializeField] private PlayerMovement player;
 
-    // Nuevo: referencias para disparo sin Shooter
     [SerializeField] private BulletFactory bulletFactory;
     [SerializeField] private Transform firePoint;
 
@@ -39,21 +37,20 @@ public class CharacterStateMachine : MonoBehaviour
 
         if (player == null)
         {
-            Debug.LogError("CharacterStateMachine requiere una referencia a PlayerMovement en el mismo objeto o en sus padres.", this);
+            Debug.LogError("no hay playermovement", this);
             enabled = false;
             return;
         }
 
         if (player != null)
         {
-            player.machine = this; // ensure states can access the state machine instance
+            player.machine = this; 
         }
         _idleState = new IdleState(player);
         _walkState = new WalkState(player);
         _runState = new RunState(player);
         _jumpState = new JumpState(player);
 
-        // Resolver referencias para el disparo
         if (bulletFactory == null)
             bulletFactory = GetComponent<BulletFactory>() ?? player.GetComponent<BulletFactory>();
 
@@ -61,14 +58,14 @@ public class CharacterStateMachine : MonoBehaviour
             firePoint = player.transform;
 
         if (bulletFactory == null)
-            Debug.LogWarning("No se encontró BulletFactory. Agrega y configura BulletFactory en el Player.");
+            Debug.LogWarning("no hay bulltefactory");
 
         _shootState = new ShootState(this, bulletFactory, firePoint);
     }
 
     public void Initialize()
     {
-        actualState = _idleState;  // Usa la variable privada
+        actualState = _idleState; 
         actualState.Enter();
     }
 

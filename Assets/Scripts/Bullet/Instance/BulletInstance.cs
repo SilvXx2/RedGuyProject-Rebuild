@@ -3,19 +3,17 @@ using UnityEngine;
 
 public class BulletInstance : MonoBehaviour
 {
-    [SerializeField] private Bullet data; // Flyweight
+    [SerializeField] private Bullet data; //fLYWEIGHT
 
     private Vector3 direction = Vector3.right;
     private Coroutine lifeCoroutine;
 
     public BulletPool Pool { get; set; }
 
-    // API similar al script base
     public void Initialize(Vector3 dir)
     {
         if (data == null)
         {
-            Debug.LogWarning("BulletInstance no tiene 'data' asignado. Usando valores por defecto.");
             SetDirection(dir);
             StartLifeTimer(3f);
             return;

@@ -24,7 +24,7 @@ public class RewindCommand : ICommand
     public void Execute()
     {
         if (runner == null || rb == null || tr == null || mace == null) return;
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
         rb.angularVelocity = 0f;
         rb.gravityScale = 0f;
         mace.State = Mace.MaceState.Rewinding;

@@ -66,7 +66,7 @@ public class Mace : MonoBehaviour
         if (State == MaceState.Falling && IsGround(collision.collider))
         {
             // Enfriar tras impacto y luego volver
-            rb.velocity = Vector2.zero;          // CORREGIDO
+            rb.linearVelocity = Vector2.zero;          // CORREGIDO
             rb.angularVelocity = 0f;
             rb.gravityScale = 0f;
             State = MaceState.Cooldown;

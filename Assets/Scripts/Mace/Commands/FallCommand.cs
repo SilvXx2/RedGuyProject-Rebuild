@@ -19,7 +19,7 @@ public class FallCommand : ICommand
     {
         if (rb == null || mace == null) return;
         mace.State = Mace.MaceState.Falling;
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
         rb.angularVelocity = 0f;
         rb.gravityScale = gravityScale;
         if (downwardImpulse > 0f)

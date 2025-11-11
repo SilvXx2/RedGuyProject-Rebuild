@@ -24,6 +24,12 @@ public class IdleState : ICharacter
 
     public void Update()
     {
+        // Bloquear input y transiciones mientras dura el knockback
+        if (player is IKnockbackable kb && kb.IsMovementLocked)
+        {
+            player.CurrentHorizontalSpeed = 0f;
+            return;
+        }
         horizontalInput = Input.GetAxisRaw("Horizontal");
         player.CurrentHorizontalSpeed = 0f;
 
@@ -46,6 +52,7 @@ public class IdleState : ICharacter
 
     public void Shoot() 
     {
+        if (player is IKnockbackable kb && kb.IsMovementLocked) return;
         if (Input.GetKeyDown(KeyCode.P))
         {
             player.machine.ShootState.SetReturn(this);

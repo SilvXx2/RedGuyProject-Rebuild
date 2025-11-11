@@ -23,11 +23,17 @@ public class RunState : ICharacter
 
     public void Update()
     {
+        // Si está bloqueado por knockback, ignorar input y no mover
+        if (player is IKnockbackable kb && kb.IsMovementLocked)
+        {
+            player.CurrentHorizontalSpeed = 0f;
+            return;
+        }
         horizontalInput = Input.GetAxisRaw("Horizontal");
 
         bool hasInput = horizontalInput != 0f;
         bool shiftHeld = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
-        bool jumpPressed = Input.GetButtonDown("Jump");
+    bool jumpPressed = !((player is IKnockbackable kbl) && kbl.IsMovementLocked) && Input.GetButtonDown("Jump");
 
         if (jumpPressed)
         {

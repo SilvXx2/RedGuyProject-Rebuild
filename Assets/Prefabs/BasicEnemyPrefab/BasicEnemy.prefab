@@ -103,10 +103,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f3021b66cc15214c831ba2804b53c12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: {fileID: 11400000, guid: b03ba6a016d5954489fce222e84c5b8f, type: 2}
   patrolSpeed: 3
   pursueSpeed: 5
   moveDirection: 1
-  flipWithScale: 1
   wallMask:
     serializedVersion: 2
     m_Bits: 128

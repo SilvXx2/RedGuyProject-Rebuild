@@ -4,6 +4,7 @@ using UnityEngine;
 public class BulletInstance : MonoBehaviour
 {
     [SerializeField] private Bullet data; //fLYWEIGHT
+    [SerializeField] protected LayerMask destroyOnLayers;
 
     private Vector3 direction = Vector3.right;
     private Coroutine lifeCoroutine;
@@ -47,8 +48,18 @@ public class BulletInstance : MonoBehaviour
         Pool?.ReturnToPool(this);
     }
 
-    private void OnCollisionEnter(Collision _)
+    protected virtual void OnTriggerEnter2D(Collider2D other)
     {
-        Pool?.ReturnToPool(this);
+        if (other.TryGetComponent<EnemyController>(out var enemy))
+        {
+            enemy.TakeDamage(1);
+            Pool?.ReturnToPool(this);
+            return;
+        }
+
+        if ((destroyOnLayers.value & (1 << other.gameObject.layer)) != 0)
+        {
+            Pool?.ReturnToPool(this);
+        }
     }
 }

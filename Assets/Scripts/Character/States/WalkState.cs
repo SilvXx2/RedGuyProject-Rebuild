@@ -47,6 +47,12 @@ public class WalkState : ICharacter
         player.CurrentHorizontalSpeed = horizontalInput * speed;
         player.FlipToDirection(horizontalInput);
 
+        if (player.Animator)
+        {
+            player.Animator.SetBool("isRun", true);
+            player.Animator.SetBool("isJump", false);
+        }
+
         if (!hasInput)
         {
             player.CurrentHorizontalSpeed = 0f;

@@ -44,6 +44,11 @@ public class RunState : ICharacter
         player.transform.Translate(new Vector3(horizontalInput, 0f, 0f) * (Time.deltaTime * speed), Space.World);
         player.CurrentHorizontalSpeed = horizontalInput * speed;
         player.FlipToDirection(horizontalInput);
+        if (player.Animator)
+        {
+            player.Animator.SetBool("isRun", true);
+            player.Animator.SetBool("isJump", false);
+        }
 
         if (!hasInput)
         {

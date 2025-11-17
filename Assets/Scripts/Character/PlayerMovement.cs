@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour, IKnockbackable
 {
     public CharacterStateMachine machine;
     public Rigidbody2D Rigidbody2D { get; private set; }
+    public Animator Animator { get; private set; }
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundCheckRadius = 0.1f;
     [SerializeField] private LayerMask groundLayer;
@@ -19,6 +20,7 @@ public class PlayerMovement : MonoBehaviour, IKnockbackable
     private void Awake()
     {
         Rigidbody2D = GetComponent<Rigidbody2D>();
+        Animator = GetComponent<Animator>();
     }
 
     void Start()

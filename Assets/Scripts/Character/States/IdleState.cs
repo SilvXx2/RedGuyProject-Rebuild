@@ -30,6 +30,11 @@ public class IdleState : ICharacter
             player.CurrentHorizontalSpeed = 0f;
             return;
         }
+        if (player.Animator)
+        {
+            player.Animator.SetBool("isRun", false);
+            player.Animator.SetBool("isJump", false);
+        }
         horizontalInput = Input.GetAxisRaw("Horizontal");
         player.CurrentHorizontalSpeed = 0f;
 

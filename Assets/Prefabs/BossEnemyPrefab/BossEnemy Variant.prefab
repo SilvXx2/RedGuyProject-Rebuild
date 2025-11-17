@@ -76,19 +76,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6337860442116932273, guid: 9062df3de52b38c4c812fc22d49d6993, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.6291
+      value: 4.926408
       objectReference: {fileID: 0}
     - target: {fileID: 6337860442116932273, guid: 9062df3de52b38c4c812fc22d49d6993, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.2727
+      value: 4.4638104
       objectReference: {fileID: 0}
     - target: {fileID: 6337860442116932273, guid: 9062df3de52b38c4c812fc22d49d6993, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 231.6646
+      value: 232.5605
       objectReference: {fileID: 0}
     - target: {fileID: 6337860442116932273, guid: 9062df3de52b38c4c812fc22d49d6993, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.7726
+      value: -2.7646
       objectReference: {fileID: 0}
     - target: {fileID: 6337860442116932273, guid: 9062df3de52b38c4c812fc22d49d6993, type: 3}
       propertyPath: m_LocalPosition.z
@@ -128,15 +128,15 @@ PrefabInstance:
       objectReference: {fileID: 1228083434260799733}
     - target: {fileID: 8545093947032026545, guid: 9062df3de52b38c4c812fc22d49d6993, type: 3}
       propertyPath: m_Color.b
-      value: 0.07587219
+      value: 0.38652548
       objectReference: {fileID: 0}
     - target: {fileID: 8545093947032026545, guid: 9062df3de52b38c4c812fc22d49d6993, type: 3}
       propertyPath: m_Color.g
-      value: 0.07587219
+      value: 0.38652548
       objectReference: {fileID: 0}
     - target: {fileID: 8545093947032026545, guid: 9062df3de52b38c4c812fc22d49d6993, type: 3}
       propertyPath: m_Color.r
-      value: 0.5188679
+      value: 0.8113208
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3925845852012527796, guid: 9062df3de52b38c4c812fc22d49d6993, type: 3}
@@ -186,13 +186,12 @@ MonoBehaviour:
     m_Bits: 0
   viewDistance: 0
   player: {fileID: 0}
+  contactDamage: 1
   bulletPrefab: {fileID: -3505596700045051050, guid: 943aed55a5901a34db92a4849201508c, type: 3}
   bulletFactory: {fileID: 7985922805625403183}
   firePoint: {fileID: 235243206644131686}
   projectileSpeed: 10
   cooldownBetweenSets: 4
-  maxHealth: 10
-  lifeText: {fileID: 0}
 --- !u!4 &7823751681969402886 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6337860442116932273, guid: 9062df3de52b38c4c812fc22d49d6993, type: 3}

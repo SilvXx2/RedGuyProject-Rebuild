@@ -18,6 +18,11 @@ public class JumpState : ICharacter
 
     public void Enter()
     {
+        if (player.Animator)
+        {
+            player.Animator.SetBool("isJump", true);
+        }
+
         float preservedX = Mathf.Approximately(player.CurrentHorizontalSpeed, 0f)
             ? Input.GetAxisRaw("Horizontal") * airSpeed
             : player.CurrentHorizontalSpeed;
@@ -58,6 +63,11 @@ public class JumpState : ICharacter
         if (!player.IsGrounded())
         {
             return;
+        }
+
+        if (player.Animator)
+        {
+            player.Animator.SetBool("isJump", false);
         }
 
         if (!hasInput)

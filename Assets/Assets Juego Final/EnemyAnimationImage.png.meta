@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: 6bd1c00f5f6ecc746b6e2277f8a7d292
+guid: 224dc0d2312a22c46a7e9b48d457e0ae
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,11 +20,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -62,10 +63,11 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 1
-  cookieLightType: 1
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
   platformSettings:
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -75,9 +77,10 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -87,9 +90,10 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -99,297 +103,304 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 2x_0
+      name: 2xmalo_0
       rect:
         serializedVersion: 2
-        x: 57
-        y: 52
-        width: 144
-        height: 146
+        x: 23
+        y: 26
+        width: 78
+        height: 92
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c096bada4f6174428c9240858cd39d2
-      internalID: 2090419537
+      spriteID: ddc66f9d75fe2474c8ac6866bbf8c7e7
+      internalID: 856170857
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 2x_1
+      name: 2xmalo_1
       rect:
         serializedVersion: 2
-        x: 220
-        y: 52
-        width: 143
-        height: 148
+        x: 105
+        y: 26
+        width: 77
+        height: 93
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbcb36195ce36c14daa11116c3c6afbf
-      internalID: 1067484171
+      spriteID: 48df830c0214ec64c9f91b1fa5a07c63
+      internalID: 2045139298
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 2x_2
+      name: 2xmalo_2
       rect:
         serializedVersion: 2
-        x: 382
-        y: 52
-        width: 144
-        height: 148
+        x: 186
+        y: 26
+        width: 77
+        height: 93
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab5f24a62374be740be9d4b558b08f5d
-      internalID: -1472672587
+      spriteID: fe9cc4f51c1fb3b47b8e5f66e704295f
+      internalID: 1800187927
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 2x_3
+      name: 2xmalo_3
       rect:
         serializedVersion: 2
-        x: 545
-        y: 52
-        width: 144
-        height: 150
+        x: 268
+        y: 26
+        width: 77
+        height: 94
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2e5cc78638037d4abc98ad9f08a2ff6
-      internalID: -1824563076
+      spriteID: 83b1b18e17435874fb932cb1a3614fda
+      internalID: -1631535208
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 2x_4
+      name: 2xmalo_4
       rect:
         serializedVersion: 2
-        x: 708
-        y: 52
-        width: 144
-        height: 150
+        x: 350
+        y: 26
+        width: 76
+        height: 94
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65442c16dc2e983429250d3a621ef1e0
-      internalID: 326372743
+      spriteID: 9465ce67c4291134fa317a9473b5cfff
+      internalID: 24973749
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 2x_5
+      name: 2xmalo_5
       rect:
         serializedVersion: 2
-        x: 871
-        y: 52
-        width: 143
-        height: 152
+        x: 430
+        y: 26
+        width: 77
+        height: 94
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f245f89173475b4d85c4d8d3f084e1d
-      internalID: 1810227615
+      spriteID: 8f1e650092733934aa23552cf0f296f1
+      internalID: -575486876
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 2x_6
+      name: 2xmalo_6
       rect:
         serializedVersion: 2
-        x: 1033
-        y: 52
-        width: 144
-        height: 152
+        x: 512
+        y: 26
+        width: 77
+        height: 95
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97da5d9321ddfff469d9a43a037f9431
-      internalID: -1630872055
+      spriteID: 123c632a28e40284e826ce8cf6119dc1
+      internalID: -2054029850
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 2x_7
+      name: 2xmalo_7
       rect:
         serializedVersion: 2
-        x: 1196
-        y: 52
-        width: 144
-        height: 150
+        x: 594
+        y: 26
+        width: 76
+        height: 94
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db4bed040c57c7048b359b76d7c0581b
-      internalID: 54636004
+      spriteID: 745f775e0a672cb449cafdf5423ff041
+      internalID: 1621165259
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 2x_8
+      name: 2xmalo_8
       rect:
         serializedVersion: 2
-        x: 1359
-        y: 52
-        width: 144
-        height: 150
+        x: 675
+        y: 26
+        width: 77
+        height: 94
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f18636573aee1df40babb9c61e55efe1
-      internalID: 1489908385
+      spriteID: 24c0f97983cac964798a7158376d835c
+      internalID: -555352966
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 2x_9
+      name: 2xmalo_9
       rect:
         serializedVersion: 2
-        x: 1522
-        y: 52
-        width: 144
-        height: 148
+        x: 756
+        y: 26
+        width: 77
+        height: 92
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9593e9854b343bc47ace66cb0561db75
-      internalID: -214099390
+      spriteID: 9fd990d51cd8f7e42ad32774c73e397c
+      internalID: -1157648702
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 2x_10
+      name: 2xmalo_10
       rect:
         serializedVersion: 2
-        x: 1685
-        y: 52
-        width: 143
-        height: 148
+        x: 838
+        y: 26
+        width: 76
+        height: 92
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60fe9dd7c33c968479f65ad22bfc7e45
-      internalID: -1440164981
+      spriteID: 0ec1cd4ba5bf78045b69cec74a1f70af
+      internalID: 1201845439
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 2x_11
+      name: 2xmalo_11
       rect:
         serializedVersion: 2
-        x: 1847
-        y: 52
-        width: 144
-        height: 146
+        x: 919
+        y: 26
+        width: 77
+        height: 92
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81fd8cf81e881664b8e21fcb641b345b
-      internalID: 2070862576
+      spriteID: 2a2ca4f8629bc4a4293e8e437a7addf9
+      internalID: 921000513
       vertices: []
       indices: 
       edges: []
       weights: []
     outline: []
+    customData: 
     physicsShape: []
     bones: []
-    spriteID: 4e5239fa3afb1df4ea14e26fd508a715
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
     nameFileIdTable:
-      2x_10: -1440164981
-      2x_5: 1810227615
-      2x_2: -1472672587
-      2x_4: 326372743
-      2x_6: -1630872055
-      2x_11: 2070862576
-      2x_9: -214099390
-      2x_1: 1067484171
-      2x_0: 2090419537
-      2x_3: -1824563076
-      2x_8: 1489908385
-      2x_7: 54636004
-  spritePackingTag: 
+      2xmalo_0: 856170857
+      2xmalo_1: 2045139298
+      2xmalo_10: 1201845439
+      2xmalo_11: 921000513
+      2xmalo_2: 1800187927
+      2xmalo_3: -1631535208
+      2xmalo_4: 24973749
+      2xmalo_5: -575486876
+      2xmalo_6: -2054029850
+      2xmalo_7: 1621165259
+      2xmalo_8: -555352966
+      2xmalo_9: -1157648702
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 85838
-  packageName: Free Platform Game Assets
-  packageVersion: 1.9.4
-  assetPath: Assets/BayatGames/Free Platform Game Assets/Character/Character Animation
-    ( Update 1.8 )/Idle/2x.png
-  uploadId: 484258

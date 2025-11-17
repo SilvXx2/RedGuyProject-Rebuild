@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EnemyType
   m_EditorClassIdentifier: 
   patrolSpeed: 3
-  pursueSpeed: 5
+  pursueSpeed: 4
   initialDirection: 1
   wallMask:
     serializedVersion: 2
@@ -23,3 +23,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   viewDistance: 8
+  maxHealth: 3

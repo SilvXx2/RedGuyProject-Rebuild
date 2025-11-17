@@ -1,6 +1,5 @@
 using UnityEngine;
 
-// filepath: d:\Proyectos\Unity\PatronDiseños\RedGuyProject-Rebuild\Assets\Scripts\BasicEnemy\EnemyController.cs
 [DisallowMultipleComponent]
 public class EnemyController : MonoBehaviour
 {
@@ -8,7 +7,6 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private EnemyType type;
     public EnemyType Type => type;
 
-    // Campos que los estados usan (se rellenan desde 'type')
     [HideInInspector] public float patrolSpeed;
     [HideInInspector] public float pursueSpeed;
     [HideInInspector] public int moveDirection;
@@ -18,6 +16,8 @@ public class EnemyController : MonoBehaviour
     [HideInInspector] public float viewDistance;
 
     [SerializeField] private Transform player;
+
+    [SerializeField] private int contactDamage = 1;
 
     private Transform tr;
     private int currentHealth;
@@ -47,7 +47,6 @@ public class EnemyController : MonoBehaviour
         AutoFindPlayer();
     }
 
-    // ==== API usada por PatrolState / PursueState ====
 
     public void Move(int dir, float speed)
     {
@@ -120,5 +119,13 @@ public class EnemyController : MonoBehaviour
         if (player) return;
         GameObject go = GameObject.FindGameObjectWithTag("Player");
         if (go) player = go.transform;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.TryGetComponent<IDamageable>(out var damageable))
+        {
+            damageable.TakeDamage(contactDamage);
+        }
     }
 }

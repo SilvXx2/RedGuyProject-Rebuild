@@ -5,7 +5,6 @@ public class PursueState : IEnemyState
     private readonly EnemyController enemy;
     private readonly EnemyStateMachine machine;
 
-    // Opcional: tiempo que puede perder de vista antes de volver a patrulla
     private readonly float loseSightGrace = 0.3f;
     private float loseTimer;
 

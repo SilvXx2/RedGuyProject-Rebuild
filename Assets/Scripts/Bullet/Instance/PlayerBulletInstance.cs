@@ -6,8 +6,9 @@ public class PlayerBulletInstance : BulletInstance
 
     protected override void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.TryGetComponent<PlayerMovement>(out var player))
+        if (other.TryGetComponent<IDamageable>(out var damageable))
         {
+            damageable.TakeDamage(damage);
             Pool?.ReturnToPool(this);
             return;
         }

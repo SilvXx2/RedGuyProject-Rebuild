@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: -1674714181129126340}
   - component: {fileID: -8028512184710116197}
   - component: {fileID: 3840555230461929095}
+  - component: {fileID: 1527642835508947130}
+  - component: {fileID: -1859279591083067526}
   m_Layer: 3
   m_Name: Character
   m_TagString: Player
@@ -109,6 +111,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 0
+  defaultKnockbackLock: 0.15
 --- !u!50 &-8028512184710116197
 Rigidbody2D:
   serializedVersion: 5
@@ -182,6 +185,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.50671, y: 1.5120575}
   m_EdgeRadius: 0
+--- !u!114 &1527642835508947130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149231978350532688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8158d5965ba9be4cba09774d8512e35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
+  destroyOnDeath: 0
+--- !u!114 &-1859279591083067526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149231978350532688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21c250c5a30c0924887bb2722e24ee89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 1527642835508947130}
 --- !u!1 &4943083404486828607
 GameObject:
   m_ObjectHideFlags: 0

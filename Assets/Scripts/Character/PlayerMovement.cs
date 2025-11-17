@@ -60,4 +60,18 @@ public class PlayerMovement : MonoBehaviour, IKnockbackable
         Rigidbody2D.AddForce(impulse, ForceMode2D.Impulse);
         _movementUnlockTime = Time.time + Mathf.Max(lockSeconds >= 0 ? lockSeconds : defaultKnockbackLock, 0.05f);
     }
+
+    public void FlipToDirection(float dir)
+    {
+        if (Mathf.Abs(dir) < 0.01f) return;
+
+        Vector3 scale = transform.localScale;
+        float sign = Mathf.Sign(dir);
+
+        if (Mathf.Sign(scale.x) != sign)
+        {
+            scale.x *= -1f;
+            transform.localScale = scale;
+        }
+    }
 }

@@ -45,7 +45,10 @@ public class ShootState : ICharacter
 
         if (CanShoot && _factory != null && _firePoint != null)
         {
-            _factory.Create(_firePoint.position, _firePoint.right);
+            float facing = Mathf.Sign(_firePoint.root.localScale.x);
+            Vector3 dir = facing > 0 ? Vector3.right : Vector3.left;
+
+            _factory.Create(_firePoint.position, dir);
             _nextShootTime = Time.time + _cooldown;
         }
 

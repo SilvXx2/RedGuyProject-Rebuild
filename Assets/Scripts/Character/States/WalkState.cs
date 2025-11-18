@@ -6,7 +6,7 @@ public class WalkState : ICharacter
 {
     PlayerMovement player;
     float horizontalInput;
-    private float speed = 5f;
+    private float baseSpeed = 5f;
 
     public WalkState(PlayerMovement player)
     {
@@ -25,7 +25,6 @@ public class WalkState : ICharacter
 
     public void Update()
     {
-        // Si está bloqueado por knockback, ignorar input y no mover
         if (player is IKnockbackable kb && kb.IsMovementLocked)
         {
             player.CurrentHorizontalSpeed = 0f;
@@ -43,8 +42,10 @@ public class WalkState : ICharacter
             return;
         }
 
-        player.transform.Translate(new Vector3(horizontalInput, 0f, 0f) * (Time.deltaTime * speed), Space.World);
-        player.CurrentHorizontalSpeed = horizontalInput * speed;
+        float finalSpeed = baseSpeed * player.SpeedMultiplier;
+
+        player.transform.Translate(new Vector3(horizontalInput, 0f, 0f) * (Time.deltaTime * finalSpeed), Space.World);
+        player.CurrentHorizontalSpeed = horizontalInput * finalSpeed;
         player.FlipToDirection(horizontalInput);
 
         if (player.Animator)

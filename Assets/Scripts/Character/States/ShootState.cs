@@ -9,7 +9,6 @@ public class ShootState : ICharacter
     private ICharacter _returnState;
     private bool _shot;
 
-    // Cooldown
     private float _cooldown = 0.75f;
     private float _nextShootTime;
 

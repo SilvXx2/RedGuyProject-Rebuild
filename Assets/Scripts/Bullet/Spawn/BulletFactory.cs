@@ -23,7 +23,8 @@ public class BulletFactory : MonoBehaviour
         Pool = new BulletPool(bulletPrefab, initialSize, container);
     }
 
-    // POOL INTERNO
+    public float PlayerBulletSpeedMultiplier { get; set; } = 1f;
+
     public GameObject Create(Vector3 position)
     {
         return Create(position, Vector3.right);
@@ -39,6 +40,9 @@ public class BulletFactory : MonoBehaviour
 
         var instance = Pool.GetFromPool(position);
         instance.Initialize(direction);
+
+        instance.ExternalSpeedMultiplier = PlayerBulletSpeedMultiplier;
+
         return instance.gameObject;
     }
 

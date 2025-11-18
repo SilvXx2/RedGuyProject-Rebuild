@@ -4,7 +4,7 @@ public class RunState : ICharacter
 {
     PlayerMovement player;
     float horizontalInput;
-    [SerializeField] private float speed = 10f;
+    [SerializeField] private float baseSpeed = 10f;
 
     public RunState(PlayerMovement player)
     {
@@ -23,7 +23,6 @@ public class RunState : ICharacter
 
     public void Update()
     {
-        // Si está bloqueado por knockback, ignorar input y no mover
         if (player is IKnockbackable kb && kb.IsMovementLocked)
         {
             player.CurrentHorizontalSpeed = 0f;
@@ -41,8 +40,10 @@ public class RunState : ICharacter
             return;
         }
 
-        player.transform.Translate(new Vector3(horizontalInput, 0f, 0f) * (Time.deltaTime * speed), Space.World);
-        player.CurrentHorizontalSpeed = horizontalInput * speed;
+        float finalSpeed = baseSpeed * player.SpeedMultiplier;
+
+        player.transform.Translate(new Vector3(horizontalInput, 0f, 0f) * (Time.deltaTime * finalSpeed), Space.World);
+        player.CurrentHorizontalSpeed = horizontalInput * finalSpeed;
         player.FlipToDirection(horizontalInput);
         if (player.Animator)
         {

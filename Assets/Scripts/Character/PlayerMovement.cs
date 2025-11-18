@@ -12,10 +12,15 @@ public class PlayerMovement : MonoBehaviour, IKnockbackable
 
     public float CurrentHorizontalSpeed { get; set; }
 
-    // Control de bloqueo tras knockback
     [SerializeField] private float defaultKnockbackLock = 0.15f;
     private float _movementUnlockTime;
     public bool IsMovementLocked => Time.time < _movementUnlockTime;
+
+    public float JumpMultiplier { get; private set; } = 1f;
+
+    public float SpeedMultiplier { get; private set; } = 1f;
+
+    public float BulletSpeedMultiplier { get; private set; } = 1f;
 
     private void Awake()
     {
@@ -47,18 +52,17 @@ public class PlayerMovement : MonoBehaviour, IKnockbackable
     {
         get
         {
-            if (IsMovementLocked) return false; // bloquear input durante knockback
+            if (IsMovementLocked) return false; 
             bool newInput = Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame;
             bool oldInput = Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Jump");
             return newInput || oldInput;
         }
     }
 
-    // IKnockbackable
     public void ApplyKnockback(Vector2 impulse, float lockSeconds)
     {
         if (Rigidbody2D == null) return;
-        Rigidbody2D.linearVelocity = new Vector2(0f, Rigidbody2D.linearVelocity.y); // limpia la X para que el impulso domine
+        Rigidbody2D.linearVelocity = new Vector2(0f, Rigidbody2D.linearVelocity.y); 
         Rigidbody2D.AddForce(impulse, ForceMode2D.Impulse);
         _movementUnlockTime = Time.time + Mathf.Max(lockSeconds >= 0 ? lockSeconds : defaultKnockbackLock, 0.05f);
     }
@@ -75,5 +79,41 @@ public class PlayerMovement : MonoBehaviour, IKnockbackable
             scale.x *= -1f;
             transform.localScale = scale;
         }
+    }
+
+    public void AddJumpBuff(float amount, float duration)
+    {
+        JumpMultiplier += amount;
+        StartCoroutine(RemoveJumpBuffAfter(duration, amount));
+    }
+
+    private System.Collections.IEnumerator RemoveJumpBuffAfter(float duration, float amount)
+    {
+        yield return new WaitForSeconds(duration);
+        JumpMultiplier -= amount;
+    }
+
+    public void AddSpeedBuff(float amount, float duration)
+    {
+        SpeedMultiplier *= amount;
+        StartCoroutine(RemoveSpeedBuffAfter(duration, amount));
+    }
+
+    private System.Collections.IEnumerator RemoveSpeedBuffAfter(float duration, float amount)
+    {
+        yield return new WaitForSeconds(duration);
+        SpeedMultiplier /= amount;
+    }
+
+    public void AddBulletSpeedBuff(float amount, float duration)
+    {
+        BulletSpeedMultiplier *= amount;
+        StartCoroutine(RemoveBulletSpeedBuffAfter(duration, amount));
+    }
+
+    private System.Collections.IEnumerator RemoveBulletSpeedBuffAfter(float duration, float amount)
+    {
+        yield return new WaitForSeconds(duration);
+        BulletSpeedMultiplier /= amount;
     }
 }

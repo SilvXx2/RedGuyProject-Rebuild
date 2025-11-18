@@ -24,7 +24,6 @@ public class IdleState : ICharacter
 
     public void Update()
     {
-        // Bloquear input y transiciones mientras dura el knockback
         if (player is IKnockbackable kb && kb.IsMovementLocked)
         {
             player.CurrentHorizontalSpeed = 0f;

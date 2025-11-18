@@ -11,6 +11,8 @@ public class BulletInstance : MonoBehaviour
 
     public BulletPool Pool { get; set; }
 
+    public float ExternalSpeedMultiplier { get; set; } = 1f;
+
     public void Initialize(Vector3 dir)
     {
         if (data == null)
@@ -25,7 +27,8 @@ public class BulletInstance : MonoBehaviour
 
     private void Update()
     {
-        float speed = data != null ? data.Speed : 20f;
+        float baseSpeed = data != null ? data.Speed : 20f;
+        float speed = baseSpeed * ExternalSpeedMultiplier;
         transform.Translate(direction * Time.deltaTime * speed, Space.World);
     }
 

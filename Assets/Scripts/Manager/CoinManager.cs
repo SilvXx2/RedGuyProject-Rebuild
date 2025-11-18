@@ -31,4 +31,10 @@ public class CoinManager : MonoBehaviour
         OnCoinChanged?.Invoke(coinCount); 
         Debug.Log("Monedas actuales: " + coinCount);
     }
+
+    public void SetCoins(int value)
+    {
+        coinCount = Mathf.Max(0, value);
+        OnCoinChanged?.Invoke(coinCount);
+    }
 }

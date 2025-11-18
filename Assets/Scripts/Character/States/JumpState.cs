@@ -5,7 +5,7 @@ public class JumpState : ICharacter
     private readonly PlayerMovement player;
     private float horizontalInput;
 
-    private readonly float jumpForce = 12f;
+    private readonly float baseJumpForce = 12f;   
     private readonly float airSpeed = 7.5f;
     private readonly float airAcceleration = 16f;
     private readonly float reverseControlMultiplier = 2.25f;
@@ -32,6 +32,7 @@ public class JumpState : ICharacter
         velocity.y = 0f;
         player.Rigidbody2D.linearVelocity = velocity;
 
+        float jumpForce = baseJumpForce * player.JumpMultiplier;
         player.Rigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 

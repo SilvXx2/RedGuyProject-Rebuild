@@ -191,7 +191,7 @@ MonoBehaviour:
   bulletFactory: {fileID: 7985922805625403183}
   firePoint: {fileID: 235243206644131686}
   projectileSpeed: 10
-  cooldownBetweenSets: 4
+  cooldownBetweenSets: 6
 --- !u!4 &7823751681969402886 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6337860442116932273, guid: 9062df3de52b38c4c812fc22d49d6993, type: 3}

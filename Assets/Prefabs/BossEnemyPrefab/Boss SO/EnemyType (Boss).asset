@@ -23,4 +23,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   viewDistance: 8
-  maxHealth: 10
+  maxHealth: 6

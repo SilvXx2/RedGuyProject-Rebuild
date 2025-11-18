@@ -15,7 +15,6 @@ public class EnemyStateMachine : MonoBehaviour
         if (!enemy) enemy = GetComponent<EnemyController>();
         if (!enemy)
         {
-            Debug.LogError("EnemyStateMachine requiere EnemyController.");
             enabled = false;
             return;
         }

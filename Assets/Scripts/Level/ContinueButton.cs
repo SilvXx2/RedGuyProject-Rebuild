@@ -37,9 +37,5 @@ public class ContinueButton : MonoBehaviour
         {
             CheckpointManager.Instance.ContinueFromLastCheckpoint();
         }
-        else
-        {
-            Debug.Log("No hay checkpoint guardado para continuar.");
-        }
     }
 }

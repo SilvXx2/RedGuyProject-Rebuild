@@ -10,7 +10,6 @@ public class ContadorDeVidaUI : MonoBehaviour
     {
         if (lifeText == null)
         {
-            Debug.LogError("ContadorDeVidaUI: falta asignar el TMP_Text.", this);
             enabled = false;
             return;
         }
@@ -24,7 +23,6 @@ public class ContadorDeVidaUI : MonoBehaviour
 
         if (playerHealth == null)
         {
-            Debug.LogError("ContadorDeVidaUI: no se encontró Health en el Player.", this);
             enabled = false;
             return;
         }

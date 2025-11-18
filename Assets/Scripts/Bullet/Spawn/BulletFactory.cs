@@ -34,7 +34,6 @@ public class BulletFactory : MonoBehaviour
     {
         if (Pool == null)
         {
-            Debug.LogError("BulletFactory no inicializado. Llama a Initialize() o asigna el prefab en el inspector.");
             return null;
         }
 

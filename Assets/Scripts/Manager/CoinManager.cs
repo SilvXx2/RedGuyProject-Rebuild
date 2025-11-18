@@ -29,7 +29,6 @@ public class CoinManager : MonoBehaviour
     {
         coinCount += amount;
         OnCoinChanged?.Invoke(coinCount); 
-        Debug.Log("Monedas actuales: " + coinCount);
     }
 
     public void SetCoins(int value)

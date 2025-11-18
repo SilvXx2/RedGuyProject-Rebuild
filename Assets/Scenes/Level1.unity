@@ -3460,8 +3460,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5c2639165a0c95e4bbc95a8d0a755340, type: 2}
+  m_sharedMaterial: {fileID: -895922558106187501, guid: 5c2639165a0c95e4bbc95a8d0a755340, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3491,7 +3491,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -3545,6 +3545,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3412310681203842925, guid: e2a5adbccbfb1da49acf4264ccd802ff, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8848799946464220382, guid: e2a5adbccbfb1da49acf4264ccd802ff, type: 3}
       propertyPath: m_Name
       value: Saw (1)
@@ -4565,6 +4569,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3412310681203842925, guid: e2a5adbccbfb1da49acf4264ccd802ff, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8848799946464220382, guid: e2a5adbccbfb1da49acf4264ccd802ff, type: 3}
       propertyPath: m_Name
       value: Saw
@@ -6645,6 +6653,14 @@ PrefabInstance:
       propertyPath: itemIcon
       value: 
       objectReference: {fileID: 1981406274}
+    - target: {fileID: 9139332108767056847, guid: 87e5a29813eb29d47a570e667b1c890f, type: 3}
+      propertyPath: fireRateMultiplier
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9139332108767056847, guid: 87e5a29813eb29d47a570e667b1c890f, type: 3}
+      propertyPath: bulletSpeedMultiplier
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8168,8 +8184,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5c2639165a0c95e4bbc95a8d0a755340, type: 2}
+  m_sharedMaterial: {fileID: -895922558106187501, guid: 5c2639165a0c95e4bbc95a8d0a755340, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8199,7 +8215,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -9066,7 +9082,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 8302129328904623997, guid: d66683ac8f37da34084b531880bac451, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9737,7 +9753,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 8302129328904623997, guid: d66683ac8f37da34084b531880bac451, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -178140,6 +178156,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1318191491474740617, guid: 58cf7035ffe7018459205240784c7f7a, type: 3}
+      propertyPath: contactDamage
+      value: 88
+      objectReference: {fileID: 0}
     - target: {fileID: 1318191491474740617, guid: 58cf7035ffe7018459205240784c7f7a, type: 3}
       propertyPath: detectOffset.y
       value: -30.4

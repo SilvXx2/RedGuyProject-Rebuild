@@ -129,7 +129,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6250840007263786406, guid: 72aa3f4b2e58b334db6d650a6e8f09f4, type: 3}
       propertyPath: coinId
-      value: 26
+      value: Lv28
       objectReference: {fileID: 0}
     - target: {fileID: 523106599114377683, guid: 72aa3f4b2e58b334db6d650a6e8f09f4, type: 3}
       propertyPath: m_Name
@@ -241,7 +241,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6250840007263786406, guid: 72aa3f4b2e58b334db6d650a6e8f09f4, type: 3}
       propertyPath: coinId
-      value: 26
+      value: Lv37
       objectReference: {fileID: 0}
     - target: {fileID: 523106599114377683, guid: 72aa3f4b2e58b334db6d650a6e8f09f4, type: 3}
       propertyPath: m_Name
@@ -899,6 +899,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PowerUpSalto (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6751506489023995569, guid: b84bb9a70ffd31f439b4f0773519438d, type: 3}
+      propertyPath: itemIcon
+      value: 
+      objectReference: {fileID: 387185919739451540}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1469,7 +1473,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6250840007263786406, guid: 72aa3f4b2e58b334db6d650a6e8f09f4, type: 3}
       propertyPath: coinId
-      value: 27
+      value: Lv29
       objectReference: {fileID: 0}
     - target: {fileID: 523106599114377683, guid: 72aa3f4b2e58b334db6d650a6e8f09f4, type: 3}
       propertyPath: m_Name
@@ -1535,7 +1539,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6250840007263786406, guid: 72aa3f4b2e58b334db6d650a6e8f09f4, type: 3}
       propertyPath: coinId
-      value: 25
+      value: Lv33
       objectReference: {fileID: 0}
     - target: {fileID: 523106599114377683, guid: 72aa3f4b2e58b334db6d650a6e8f09f4, type: 3}
       propertyPath: m_Name
@@ -1942,7 +1946,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6250840007263786406, guid: 72aa3f4b2e58b334db6d650a6e8f09f4, type: 3}
       propertyPath: coinId
-      value: 25
+      value: Lv36
       objectReference: {fileID: 0}
     - target: {fileID: 523106599114377683, guid: 72aa3f4b2e58b334db6d650a6e8f09f4, type: 3}
       propertyPath: m_Name
@@ -2375,7 +2379,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6250840007263786406, guid: 72aa3f4b2e58b334db6d650a6e8f09f4, type: 3}
       propertyPath: coinId
-      value: 27
+      value: Lv38
       objectReference: {fileID: 0}
     - target: {fileID: 523106599114377683, guid: 72aa3f4b2e58b334db6d650a6e8f09f4, type: 3}
       propertyPath: m_Name
@@ -80869,7 +80873,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6250840007263786406, guid: 72aa3f4b2e58b334db6d650a6e8f09f4, type: 3}
       propertyPath: coinId
-      value: 26
+      value: Lv26
       objectReference: {fileID: 0}
     - target: {fileID: 523106599114377683, guid: 72aa3f4b2e58b334db6d650a6e8f09f4, type: 3}
       propertyPath: m_Name
@@ -81092,7 +81096,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6250840007263786406, guid: 72aa3f4b2e58b334db6d650a6e8f09f4, type: 3}
       propertyPath: coinId
-      value: 26
+      value: Lv34
       objectReference: {fileID: 0}
     - target: {fileID: 523106599114377683, guid: 72aa3f4b2e58b334db6d650a6e8f09f4, type: 3}
       propertyPath: m_Name
@@ -81762,6 +81766,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 156333178}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1443135881
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1443135883}
+  - component: {fileID: 1443135882}
+  m_Layer: 0
+  m_Name: CoinManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1443135882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443135881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4d76166ff516924ab7104a10553b518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1443135883
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443135881}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.698911, y: 3.4560392, z: 1.0320891}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1490118819
 GameObject:
   m_ObjectHideFlags: 0
@@ -82164,7 +82212,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6250840007263786406, guid: 72aa3f4b2e58b334db6d650a6e8f09f4, type: 3}
       propertyPath: coinId
-      value: 25
+      value: Lv39
       objectReference: {fileID: 0}
     - target: {fileID: 523106599114377683, guid: 72aa3f4b2e58b334db6d650a6e8f09f4, type: 3}
       propertyPath: m_Name
@@ -82317,7 +82365,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6250840007263786406, guid: 72aa3f4b2e58b334db6d650a6e8f09f4, type: 3}
       propertyPath: coinId
-      value: 27
+      value: Lv27
       objectReference: {fileID: 0}
     - target: {fileID: 523106599114377683, guid: 72aa3f4b2e58b334db6d650a6e8f09f4, type: 3}
       propertyPath: m_Name
@@ -82971,7 +83019,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6250840007263786406, guid: 72aa3f4b2e58b334db6d650a6e8f09f4, type: 3}
       propertyPath: coinId
-      value: 27
+      value: Lv35
       objectReference: {fileID: 0}
     - target: {fileID: 523106599114377683, guid: 72aa3f4b2e58b334db6d650a6e8f09f4, type: 3}
       propertyPath: m_Name
@@ -83115,6 +83163,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PowerUpSalto
       objectReference: {fileID: 0}
+    - target: {fileID: 6751506489023995569, guid: b84bb9a70ffd31f439b4f0773519438d, type: 3}
+      propertyPath: itemIcon
+      value: 
+      objectReference: {fileID: 387185919739451540}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -83130,7 +83182,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6250840007263786406, guid: 72aa3f4b2e58b334db6d650a6e8f09f4, type: 3}
       propertyPath: coinId
-      value: 25
+      value: Lv30
       objectReference: {fileID: 0}
     - target: {fileID: 523106599114377683, guid: 72aa3f4b2e58b334db6d650a6e8f09f4, type: 3}
       propertyPath: m_Name
@@ -83634,7 +83686,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6250840007263786406, guid: 72aa3f4b2e58b334db6d650a6e8f09f4, type: 3}
       propertyPath: coinId
-      value: 26
+      value: Lv31
       objectReference: {fileID: 0}
     - target: {fileID: 523106599114377683, guid: 72aa3f4b2e58b334db6d650a6e8f09f4, type: 3}
       propertyPath: m_Name
@@ -84128,7 +84180,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6250840007263786406, guid: 72aa3f4b2e58b334db6d650a6e8f09f4, type: 3}
       propertyPath: coinId
-      value: 27
+      value: Lv32
       objectReference: {fileID: 0}
     - target: {fileID: 523106599114377683, guid: 72aa3f4b2e58b334db6d650a6e8f09f4, type: 3}
       propertyPath: m_Name
@@ -84194,7 +84246,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6250840007263786406, guid: 72aa3f4b2e58b334db6d650a6e8f09f4, type: 3}
       propertyPath: coinId
-      value: 25
+      value: Lv25
       objectReference: {fileID: 0}
     - target: {fileID: 523106599114377683, guid: 72aa3f4b2e58b334db6d650a6e8f09f4, type: 3}
       propertyPath: m_Name
@@ -84351,6 +84403,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36a52c9bf3d1356488e040dff977ed70, type: 3}
+--- !u!114 &387185919739451540 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8337713954052502153, guid: 36a52c9bf3d1356488e040dff977ed70, type: 3}
+  m_PrefabInstance: {fileID: 387185919739451539}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &807887795634677475
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -84679,3 +84742,4 @@ SceneRoots:
   - {fileID: 2932633625189133622}
   - {fileID: 217856867}
   - {fileID: 807887795634677475}
+  - {fileID: 1443135883}

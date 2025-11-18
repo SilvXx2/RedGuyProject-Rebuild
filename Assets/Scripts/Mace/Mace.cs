@@ -36,7 +36,7 @@ public class Mace : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0f;
-        rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous; // importante para evitar atravesar
+            rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         initialPosition = transform.position;
         if (rewindCurve == null) rewindCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
     }
@@ -99,7 +99,6 @@ public class Mace : MonoBehaviour
 
     private bool IsGround(Collider2D other)
     {
-        // Más robusto: compara contra el LayerMask del “ground”
         return ((1 << other.gameObject.layer) & groundMask.value) != 0;
     }
 

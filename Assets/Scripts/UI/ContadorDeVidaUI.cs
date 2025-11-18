@@ -47,7 +47,7 @@ public class ContadorDeVidaUI : MonoBehaviour
 
     private void OnHealthChanged(Health h)
     {
-        lifeText.text = $"Vidas: {h.CurrentHealth}";
+        lifeText.text = $"Hearts: {h.CurrentHealth}";
     }
 }
 

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BulletInstance : MonoBehaviour
 {
-    [SerializeField] private Bullet data; //fLYWEIGHT
+    [SerializeField] private Bullet data;
     [SerializeField] protected LayerMask destroyOnLayers;
 
     private Vector3 direction = Vector3.right;
@@ -27,9 +27,8 @@ public class BulletInstance : MonoBehaviour
 
     private void Update()
     {
-        float baseSpeed = data != null ? data.Speed : 20f;
-        float speed = baseSpeed * ExternalSpeedMultiplier;
-        transform.Translate(direction * Time.deltaTime * speed, Space.World);
+        float speed = data != null ? data.Speed : 20f;
+        transform.Translate(direction * Time.deltaTime * speed * ExternalSpeedMultiplier, Space.World);
     }
 
     public void SetDirection(Vector3 dir)

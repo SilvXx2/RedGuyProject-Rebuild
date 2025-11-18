@@ -17,7 +17,7 @@ public class BossController : EnemyController
 
     protected override void Awake()
     {
-        base.Awake(); // inicializa EnemyController (Type, moveDirection, wallMask, etc.)
+        base.Awake();
 
         _rb = GetComponent<Rigidbody2D>();
         _rb.freezeRotation = true;
@@ -63,7 +63,6 @@ public class BossController : EnemyController
             return;
         }
 
-        // Creamos una instancia desde el pool y le pasamos la dirección.
         GameObject bullet = bulletFactory.Create(firePoint.position, dir);
         bullet.transform.rotation = rot;
     }

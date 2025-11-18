@@ -30,7 +30,7 @@ public class SceneLoader : MonoBehaviour
     {
         if (string.IsNullOrWhiteSpace(sceneName))
         {
-            if (debugLogs) Debug.LogWarning($"[SceneLoader] {name}: sceneName vacío/no asignado.");
+            if (debugLogs) Debug.LogWarning($"[SceneLoader] {name}: sceneName vacï¿½o/no asignado.");
             return;
         }
 
@@ -38,12 +38,10 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    // API pública opcional por si quieres cambiarla en runtime.
     public void SetSceneName(string newName) => sceneName = newName;
 
     private void OnValidate()
     {
-        // No spamear logs; validación ligera.
         if (sceneName != null) sceneName = sceneName.Trim();
     }
 }

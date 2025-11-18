@@ -23,7 +23,6 @@ public class PursueState : IEnemyState
 
     public void Update()
     {
-        // Si no ve al player, contar gracia y volver a patrulla
         if (!enemy.CanSeePlayer())
         {
             loseTimer += Time.deltaTime;
@@ -38,11 +37,9 @@ public class PursueState : IEnemyState
             loseTimer = 0f;
         }
 
-        // Dirigirse hacia el jugador
         int dirToPlayer = enemy.DirectionToPlayer();
         enemy.FlipToDirection(dirToPlayer);
 
-        // Evitar atravesar pared: si hay pared delante, no avanzar
         if (!enemy.DetectWallAhead())
         {
             enemy.Move(dirToPlayer, enemy.pursueSpeed);

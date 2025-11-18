@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class ContinueButton : MonoBehaviour
 {
-    [SerializeField] private Button continueButton; // referencia al botón
+    [SerializeField] private Button continueButton;
 
     private void Awake()
     {

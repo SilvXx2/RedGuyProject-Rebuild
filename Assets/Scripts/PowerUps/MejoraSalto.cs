@@ -8,7 +8,7 @@ public class MejoraSalto : MonoBehaviour
     public Image itemIcon;
 
     [Header("Buff de salto")]
-    [SerializeField] private float extraJumpMultiplier = 0.5f; // +50% salto
+    [SerializeField] private float extraJumpMultiplier = 0.5f;
     [SerializeField] private float duration = 10f;
 
     private void Start()

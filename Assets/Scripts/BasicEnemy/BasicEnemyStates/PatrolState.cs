@@ -17,14 +17,12 @@ public class PatrolState : IEnemyState
 
     public void Update()
     {
-        // Si ve al player, perseguir
         if (enemy.CanSeePlayer())
         {
             machine.ChangeState(machine.PursueState);
             return;
         }
 
-        // Colisión con pared: cambio de dirección, pequeño retroceso y flip
         if (enemy.DetectWallAhead())
         {
             enemy.moveDirection *= -1;
@@ -32,7 +30,6 @@ public class PatrolState : IEnemyState
             enemy.FlipToDirection(enemy.moveDirection);
         }
 
-        // Mover patrullando
         enemy.Move(enemy.moveDirection, enemy.patrolSpeed);
     }
 }

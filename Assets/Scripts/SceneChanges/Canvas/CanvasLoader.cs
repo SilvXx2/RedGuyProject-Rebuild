@@ -34,11 +34,8 @@ public class CanvasLoader : MonoBehaviour
         if (_button != null)
             _button.onClick.RemoveListener(SwitchCanvas);
     }
-
-    /// <summary>
-    /// Realiza el cambio de canvas.
-    /// </summary>
-    public void SwitchCanvas()
+    
+    private void SwitchCanvas()
     {
         if (targetCanvas == null)
         {

@@ -32,7 +32,7 @@ public class RunState : ICharacter
 
         bool hasInput = horizontalInput != 0f;
         bool shiftHeld = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
-    bool jumpPressed = !((player is IKnockbackable kbl) && kbl.IsMovementLocked) && Input.GetButtonDown("Jump");
+        bool jumpPressed = !((player is IKnockbackable kbl) && kbl.IsMovementLocked) && Input.GetButtonDown("Jump");
 
         if (jumpPressed)
         {
@@ -42,7 +42,20 @@ public class RunState : ICharacter
 
         float finalSpeed = baseSpeed * player.SpeedMultiplier;
 
-        player.transform.Translate(new Vector3(horizontalInput, 0f, 0f) * (Time.deltaTime * finalSpeed), Space.World);
+        if (player.Rigidbody2D != null)
+        {
+            var v = player.Rigidbody2D.linearVelocity;
+            v.x = horizontalInput * finalSpeed;
+            player.Rigidbody2D.linearVelocity = v;
+        }
+        else
+        {
+            player.transform.Translate(
+                new Vector3(horizontalInput, 0f, 0f) * (Time.deltaTime * finalSpeed),
+                Space.World
+            );
+        }
+
         player.CurrentHorizontalSpeed = horizontalInput * finalSpeed;
         player.FlipToDirection(horizontalInput);
         if (player.Animator)

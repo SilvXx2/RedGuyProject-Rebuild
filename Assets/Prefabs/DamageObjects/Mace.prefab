@@ -148,6 +148,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
+  contactDamage: 3
 --- !u!61 &7259000056014132384
 BoxCollider2D:
   m_ObjectHideFlags: 0

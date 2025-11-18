@@ -23,6 +23,9 @@ public class Mace : MonoBehaviour
     [Header("Suelo")]
     [SerializeField] private LayerMask groundMask;
 
+    [Header("Daño")] 
+    [SerializeField] private int contactDamage = 1;
+
     private Rigidbody2D rb;
     private Vector2 initialPosition;
     private bool armed = true;
@@ -63,10 +66,17 @@ public class Mace : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (((1 << collision.gameObject.layer) & playerMask.value) != 0)
+        {
+            if (collision.gameObject.TryGetComponent<IDamageable>(out var damageable))
+            {
+                damageable.TakeDamage(contactDamage);
+            }
+        }
+
         if (State == MaceState.Falling && IsGround(collision.collider))
         {
-            // Enfriar tras impacto y luego volver
-            rb.linearVelocity = Vector2.zero;          // CORREGIDO
+            rb.linearVelocity = Vector2.zero;
             rb.angularVelocity = 0f;
             rb.gravityScale = 0f;
             State = MaceState.Cooldown;

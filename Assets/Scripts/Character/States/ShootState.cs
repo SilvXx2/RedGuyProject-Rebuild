@@ -3,20 +3,15 @@ using UnityEngine;
 public class ShootState : ICharacter
 {
     private readonly CharacterStateMachine _machine;
-    private readonly BulletFactory _factory;
-    private readonly Transform _firePoint;
+    private readonly PlayerShooter _shooter;
 
     private ICharacter _returnState;
     private bool _shot;
 
-    private float _cooldown = 0.75f;
-    private float _nextShootTime;
-
     public ShootState(CharacterStateMachine machine, BulletFactory factory, Transform firePoint)
     {
         _machine = machine;
-        _factory = factory;
-        _firePoint = firePoint;
+        _shooter = machine != null ? machine.PlayerShooter : null;
     }
 
     public void SetReturn(ICharacter stateToReturn)
@@ -26,10 +21,9 @@ public class ShootState : ICharacter
 
     public void SetCooldown(float seconds)
     {
-        _cooldown = Mathf.Max(0f, seconds);
+        if (_shooter != null)
+            _shooter.SetCooldown(seconds);
     }
-
-    public bool CanShoot => Time.time >= _nextShootTime;
 
     public void Enter()
     {
@@ -42,13 +36,9 @@ public class ShootState : ICharacter
     {
         if (_shot) return;
 
-        if (CanShoot && _factory != null && _firePoint != null)
+        if (_shooter != null && _shooter.CanShoot)
         {
-            float facing = Mathf.Sign(_firePoint.root.localScale.x);
-            Vector3 dir = facing > 0 ? Vector3.right : Vector3.left;
-
-            _factory.Create(_firePoint.position, dir);
-            _nextShootTime = Time.time + _cooldown;
+            _shooter.Shoot();
         }
 
         _shot = true;

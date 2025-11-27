@@ -12,15 +12,16 @@ public class PlayerMovement : MonoBehaviour, IKnockbackable
 
     public float CurrentHorizontalSpeed { get; set; }
 
-    [SerializeField] private float defaultKnockbackLock = 0.15f;
-    private float _movementUnlockTime;
-    public bool IsMovementLocked => Time.time < _movementUnlockTime;
-
     public float JumpMultiplier { get; private set; } = 1f;
 
     public float SpeedMultiplier { get; private set; } = 1f;
 
     public float BulletSpeedMultiplier { get; private set; } = 1f;
+
+    // Control de bloqueo tras knockback
+    [SerializeField] private float defaultKnockbackLock = 0.15f;
+    private float _movementUnlockTime;
+    public bool IsMovementLocked => Time.time < _movementUnlockTime;
 
     private void Awake()
     {

@@ -5,11 +5,7 @@ public class Mace : MonoBehaviour
 {
     public enum MaceState { Idle, Falling, Cooldown, Rewinding }
 
-    [Header("Detección jugador")]
-    [SerializeField] private LayerMask playerMask;
-    [SerializeField] private float detectWidth = 1.0f;
-    [SerializeField] private float detectDistance = 5f;
-    [SerializeField] private Vector2 detectOffset;
+    [SerializeField] private PlayerDetector playerDetector;
 
     [Header("Caída")]
     [SerializeField] private float fallGravityScale = 4f;
@@ -36,25 +32,20 @@ public class Mace : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0f;
-            rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+        rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         initialPosition = transform.position;
         if (rewindCurve == null) rewindCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
+
+        if (playerDetector == null)
+            playerDetector = GetComponent<PlayerDetector>();
     }
 
     private void Update()
     {
-        if (State == MaceState.Idle && armed && DetectPlayerBelow())
+        if (State == MaceState.Idle && armed && playerDetector != null && playerDetector.IsPlayerDetected())
         {
             ExecuteFall();
         }
-    }
-
-    private bool DetectPlayerBelow()
-    {
-        Vector2 center = (Vector2)transform.position + detectOffset + Vector2.down * (detectDistance * 0.5f);
-        Vector2 size = new Vector2(detectWidth, detectDistance);
-        Collider2D hit = Physics2D.OverlapBox(center, size, 0f, playerMask);
-        return hit != null;
     }
 
     private void ExecuteFall()
@@ -66,12 +57,9 @@ public class Mace : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (((1 << collision.gameObject.layer) & playerMask.value) != 0)
+        if (collision.gameObject.TryGetComponent<IDamageable>(out var damageable))
         {
-            if (collision.gameObject.TryGetComponent<IDamageable>(out var damageable))
-            {
-                damageable.TakeDamage(contactDamage);
-            }
+            damageable.TakeDamage(contactDamage);
         }
 
         if (State == MaceState.Falling && IsGround(collision.collider))
@@ -104,10 +92,8 @@ public class Mace : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.yellow;
-        Vector3 center = transform.position + (Vector3)detectOffset + Vector3.down * (detectDistance * 0.5f);
-        Vector3 size = new Vector3(detectWidth, detectDistance, 0.1f);
-        Gizmos.DrawWireCube(center, size);
+        // El dibujo del área de detección ahora lo maneja PlayerDetector
+        // en su propio OnDrawGizmosSelected.
     }
 
     [ContextMenu("Set Current As Initial")]

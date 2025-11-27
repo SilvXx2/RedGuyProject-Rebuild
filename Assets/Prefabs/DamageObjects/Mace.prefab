@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2288399740954808215}
   - component: {fileID: 1318191491474740617}
   - component: {fileID: 7259000056014132384}
+  - component: {fileID: -6756966802313426754}
   m_Layer: 0
   m_Name: Mace
   m_TagString: Untagged
@@ -129,12 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd73825db6faaaf45a1ec1361f3b4a4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMask:
-    serializedVersion: 2
-    m_Bits: 8
-  detectWidth: 5.28
-  detectDistance: 3.94
-  detectOffset: {x: 0, y: -16.24}
+  playerDetector: {fileID: 0}
   fallGravityScale: 4
   fallImpulse: 2
   impactCooldown: 1
@@ -195,3 +191,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 20.263153, y: 20.6497}
   m_EdgeRadius: 0
+--- !u!114 &-6756966802313426754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2899141958303549521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0bb96041759adf4fb6577213f2b1356, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  detectWidth: 1
+  detectDistance: 5
+  detectOffset: {x: 0, y: 0}

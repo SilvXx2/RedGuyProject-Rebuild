@@ -22,6 +22,8 @@ public class CharacterStateMachine : MonoBehaviour
 
     [SerializeField] private BulletFactory bulletFactory;
     [SerializeField] private Transform firePoint;
+    [SerializeField] private PlayerShooter playerShooter;
+    public PlayerShooter PlayerShooter => playerShooter;
 
     private void Awake()
     {
@@ -56,6 +58,9 @@ public class CharacterStateMachine : MonoBehaviour
 
         if (firePoint == null)
             firePoint = player.transform;
+
+        if (playerShooter == null)
+            playerShooter = GetComponent<PlayerShooter>() ?? player.GetComponent<PlayerShooter>();
 
         if (bulletFactory == null)
             Debug.LogWarning("no hay bulltefactory");

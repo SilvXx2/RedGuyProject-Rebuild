@@ -158,6 +158,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5922376671686282276, guid: 9062df3de52b38c4c812fc22d49d6993, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6842369071884409409}
+    - targetCorrespondingSourceObject: {fileID: 5922376671686282276, guid: 9062df3de52b38c4c812fc22d49d6993, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -1411048655023201920}
   m_SourcePrefab: {fileID: 100100000, guid: 9062df3de52b38c4c812fc22d49d6993, type: 3}
 --- !u!1 &7590699496995830419 stripped
 GameObject:
@@ -189,7 +192,6 @@ MonoBehaviour:
     m_Bits: 0
   viewDistance: 0
   player: {fileID: 0}
-  contactDamage: 1
   shooter: {fileID: 6842369071884409409}
 --- !u!114 &6842369071884409409
 MonoBehaviour:
@@ -206,6 +208,22 @@ MonoBehaviour:
   bulletFactory: {fileID: 7985922805625403183}
   firePoint: {fileID: 235243206644131686}
   cooldownBetweenSets: 4
+--- !u!114 &-1411048655023201920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7590699496995830419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d6446b3568434941bca7ea6be2dfa3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactDamage: 1
+  damageMask:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!4 &7823751681969402886 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6337860442116932273, guid: 9062df3de52b38c4c812fc22d49d6993, type: 3}

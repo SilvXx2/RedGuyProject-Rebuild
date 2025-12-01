@@ -10,7 +10,6 @@ public class DamageObject : MonoBehaviour
     [Header("Top-collision tuning")]
     [SerializeField, Min(1f)] private float topHitForceMultiplier = 1.5f; 
     [SerializeField, Min(0f)] private float topExtraUpward = 0.4f; 
-    [SerializeField] private int contactDamage = 1;
 
     private float _nextHitTime;
     private bool _isTouching;
@@ -19,10 +18,6 @@ public class DamageObject : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.TryGetComponent<IDamageable>(out var damageable))
-        {
-            damageable.TakeDamage(contactDamage);
-        }
         _isTouching = true;
         TryApplyKnockback(collision);
     }

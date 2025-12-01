@@ -19,9 +19,6 @@ public class Mace : MonoBehaviour
     [Header("Suelo")]
     [SerializeField] private LayerMask groundMask;
 
-    [Header("Daño")] 
-    [SerializeField] private int contactDamage = 1;
-
     private Rigidbody2D rb;
     private Vector2 initialPosition;
     private bool armed = true;
@@ -57,11 +54,6 @@ public class Mace : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.TryGetComponent<IDamageable>(out var damageable))
-        {
-            damageable.TakeDamage(contactDamage);
-        }
-
         if (State == MaceState.Falling && IsGround(collision.collider))
         {
             rb.linearVelocity = Vector2.zero;
@@ -88,12 +80,6 @@ public class Mace : MonoBehaviour
     private bool IsGround(Collider2D other)
     {
         return ((1 << other.gameObject.layer) & groundMask.value) != 0;
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        // El dibujo del área de detección ahora lo maneja PlayerDetector
-        // en su propio OnDrawGizmosSelected.
     }
 
     [ContextMenu("Set Current As Initial")]

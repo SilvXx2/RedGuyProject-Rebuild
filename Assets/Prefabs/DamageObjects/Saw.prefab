@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6992864892087626694}
   - component: {fileID: 4016944002489252516}
   - component: {fileID: 7466889587315249678}
+  - component: {fileID: 6724077251953019162}
   m_Layer: 0
   m_Name: Saw
   m_TagString: Untagged
@@ -147,7 +148,6 @@ MonoBehaviour:
   inputLockSeconds: 1
   topHitForceMultiplier: 20
   topExtraUpward: 1.5
-  contactDamage: 1
 --- !u!95 &7466889587315249678
 Animator:
   serializedVersion: 7
@@ -170,3 +170,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6724077251953019162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8848799946464220382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d6446b3568434941bca7ea6be2dfa3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactDamage: 1
+  damageMask:
+    serializedVersion: 2
+    m_Bits: 8

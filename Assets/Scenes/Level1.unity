@@ -178314,8 +178314,12 @@ PrefabInstance:
       value: 8.68
       objectReference: {fileID: 0}
     - target: {fileID: -6756966802313426754, guid: 58cf7035ffe7018459205240784c7f7a, type: 3}
+      propertyPath: detectDistance
+      value: 2.34
+      objectReference: {fileID: 0}
+    - target: {fileID: -6756966802313426754, guid: 58cf7035ffe7018459205240784c7f7a, type: 3}
       propertyPath: detectOffset.y
-      value: -29.51
+      value: -32
       objectReference: {fileID: 0}
     - target: {fileID: 1318191491474740617, guid: 58cf7035ffe7018459205240784c7f7a, type: 3}
       propertyPath: contactDamage

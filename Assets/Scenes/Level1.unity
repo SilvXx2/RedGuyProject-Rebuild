@@ -3345,6 +3345,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 6579281032533584322, guid: 3dead63abc2569142a97a1410c74fbed, type: 3}
+      propertyPath: bulletFactory
+      value: 
+      objectReference: {fileID: 1162440184}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

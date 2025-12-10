@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd73825db6faaaf45a1ec1361f3b4a4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDetector: {fileID: 0}
+  playerDetector: {fileID: -6756966802313426754}
   fallGravityScale: 4
   fallImpulse: 2
   impactCooldown: 1
